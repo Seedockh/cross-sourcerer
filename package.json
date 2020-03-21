@@ -1,0 +1,19 @@
+{
+  "name": "cross-sourcerer",
+  "version": "1.0.0",
+  "description": "This is a copycat of Sourcerer \u001b[D.io app\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D PWA\u001b[2~ c\u001b[D\u001b[2~copycat of Sourcerer.io app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seedockh/cross-sourcerer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Seedockh/cross-sourcerer/issues"
+  },
+  "homepage": "https://github.com/Seedockh/cross-sourcerer#readme"
+}
