@@ -7,12 +7,10 @@ import auth from 'electron-auth'
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
  */
+
 if (process.env.NODE_ENV !== 'development') {
   global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
-
-console.log('test env : ')
-console.log(process.env.TEST)
 
 let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
@@ -30,7 +28,8 @@ function createWindow () {
     minHeight: 565,
     frame: true,
     resizable: true,
-    center: true
+    center: true,
+    devTools: false
   })
 
   mainWindow.loadURL(winURL)
@@ -56,6 +55,7 @@ function authGithub (evt) {
   /**
    * Authenticate to Github API
    */
+
   // Initialize the github auth options
   const opt = { client_id: process.env.GITHUB_CLIENT_ID, client_secret: process.env.GITHUB_CLIENT_SECRET }
 

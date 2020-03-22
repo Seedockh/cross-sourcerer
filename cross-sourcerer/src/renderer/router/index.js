@@ -8,7 +8,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: require('@/components/home').default
+      component: require('@/components/Home').default
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: require('@/components/Profile').default
     },
     {
       path: '*',

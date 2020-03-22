@@ -8,23 +8,22 @@ import router from './router'
 import store from './store'
 
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1'
-const token = process.env.ELECTRON_WEBPACK_APP_GITHUB_GRAPHQL_API_TOKEN || ''
-console.log(`token: ${token}`)
 
 /* =============================================*
  *======== APOLLO CLIENT CONFIGURATION ========*
  *============================================= */
 const apolloClient = new ApolloClient({
-  // You should use an absolute URL here
   uri: 'https://api.github.com/graphql',
-  headers: {
-    authorization: `Bearer df3585411ff0c25c6ec41cd5c64a3bf5d24c36bd`
+  request: (operation) => {
+    const token = localStorage.getItem('token')
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    })
   }
 })
-
-const apolloProvider = new VueApollo({
-  defaultClient: apolloClient
-})
+const apolloProvider = new VueApollo({ defaultClient: apolloClient })
 
 /* ==================================*
  *======== VUE CONFIGURATION ========*

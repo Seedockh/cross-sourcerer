@@ -1,60 +1,47 @@
 <template>
-  <div id="wrapper">
-    <main>
-      <div class="left-side">
-        <span class="title">
-          Welcome to Cross-Sourcerer
-        </span>
-        <div class="two-columns-block">
-          <img src="../assets/logo.png" alt="Github logo">
-          <p>This project aims to be a copycat of <a href="https://sourcerer.io/" target="_blank" rel="noreferrer noopener">Sourcerer</a> as a cross-platform Electron App. Github fetching done with GraphQL.</p>
-        </div>
+  <main>
+    <div class="left-side">
+      <span class="title">
+        Welcome to Cross-Sourcerer
+      </span>
+      <div class="two-columns-block">
+        <img src="../assets/logo.png" alt="Github logo">
+        <p>This project aims to be a copycat of <a href="https://sourcerer.io/" target="_blank" rel="noreferrer noopener">Sourcerer</a> as a cross-platform Electron App. Github fetching done with GraphQL.</p>
       </div>
+    </div>
 
-      <div class="right-side">
-        <div class="login">
-          <div class="title">Getting Started</div>
-          <Auth></Auth>
-        </div>
+    <div class="right-side">
+      <div class="login">
+        <div class="title">Getting Started</div>
+        <Auth></Auth>
       </div>
-    </main>
-  </div>
+    </div>
+  </main>
 </template>
 
 <script>
   import Auth from './Auth'
-// 657073476fdd7ac4241a236326582a6bdb211698
+  import Profile from './Profile'
+
   export default {
     name: 'home',
-    components: { Auth }
+    components: { Auth, Profile },
+    data () {
+      return {
+        token: localStorage.getItem('token') || null
+      }
+    },
+    mounted () {
+      if (this.token) this.$router.push({ name: 'profile' })
+
+      this.$root.$on('setToken', token => {
+        this.token = token
+      })
+    }
   }
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body { font-family: 'Source Sans Pro', sans-serif; }
-
-  #wrapper {
-    background:
-      radial-gradient(
-        ellipse at top left,
-        rgba(255, 255, 255, 1) 40%,
-        rgba(229, 229, 229, .9) 100%
-      );
-    height: 100vh;
-    padding: 60px 80px;
-    width: 100%;
-    min-width: 500px;
-    min-height: 500px;
-  }
-
   main {
     display: flex;
     justify-content: space-between;
