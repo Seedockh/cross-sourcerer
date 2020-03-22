@@ -57,7 +57,7 @@ function authGithub (evt) {
    * Authenticate to Github API
    */
   // Initialize the github auth options
-  const opt = { client_id: 'd7c85f7692849e76398e', client_secret: 'a4a9c02a95a3257f72a835164103ed5dffa90598' }
+  const opt = { client_id: process.env.GITHUB_CLIENT_ID, client_secret: process.env.GITHUB_CLIENT_SECRET }
 
   // Handle the github authentication
   return auth(auth.providers.github, opt, (error, token) => {
