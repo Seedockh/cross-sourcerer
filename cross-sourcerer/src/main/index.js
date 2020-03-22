@@ -22,11 +22,17 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 563,
     useContentSize: true,
-    width: 1000,
+    width: 1000
   })
 
-  mainWindow.setMinimumSize(500)
   mainWindow.loadURL(winURL)
+  mainWindow.closeDevTools()
+
+  if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
+    mainWindow.webContents.once('dom-ready', () => {
+      mainWindow.openDevTools()
+    })
+  }
 
   mainWindow.on('closed', () => {
     mainWindow = null

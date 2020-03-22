@@ -1,0 +1,3 @@
+fragment github on HelloGithub {
+  repository_search_url
+}

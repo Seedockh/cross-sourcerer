@@ -5,9 +5,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'cross-sourcerer'
-  }
+export default {
+  name: 'cross-sourcerer'
+}
 </script>
 
 <style>

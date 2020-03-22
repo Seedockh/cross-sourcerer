@@ -72,10 +72,19 @@ let rendererConfig = {
         use: 'node-loader'
       },
       {
+        test: /\.gql$/,
+        use: 'graphql-tag/loader'
+      },
+      {
         test: /\.vue$/,
         use: {
           loader: 'vue-loader',
           options: {
+            transpileOptions: {
+              transforms: {
+                dangerousTaggedTemplateString: true
+              }
+            },
             extractCSS: process.env.NODE_ENV === 'production',
             loaders: {
               sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax=1',
@@ -147,7 +156,7 @@ let rendererConfig = {
       '@': path.join(__dirname, '../src/renderer'),
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['.js', '.vue', '.json', '.css', '.node']
+    extensions: ['.mjs', '.js', '.vue', '.json', '.css', '.node']
   },
   target: 'electron-renderer'
 }

@@ -1,0 +1,5 @@
+query HelloGithub {
+  viewer {
+    login
+  }
+}
