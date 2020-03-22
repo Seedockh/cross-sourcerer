@@ -5,7 +5,10 @@
         <span class="title">
           Welcome to Cross-Sourcerer
         </span>
-        <p>This project aims to be a copycat of <a href="https://sourcerer.io/" target="_blank" rel="noreferrer noopener">Sourcerer</a> as a cross-platform Electron App. Github fetching done with GraphQL.</p>
+        <div class="two-columns-block">
+          <img src="../assets/logo.png" alt="Github logo">
+          <p>This project aims to be a copycat of <a href="https://sourcerer.io/" target="_blank" rel="noreferrer noopener">Sourcerer</a> as a cross-platform Electron App. Github fetching done with GraphQL.</p>
+        </div>
       </div>
 
       <div class="right-side">
@@ -63,8 +66,19 @@
     display: flex;
     flex-direction: column;
   }
-    .left-side p {
-      padding: 2em 2em;
+    .left-side img {
+      width: 100px;
+      height: 100px;
+    }
+
+  .two-columns-block {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+  }
+    .two-columns-block p {
+      padding: 0 2em;
+      align-self: center;
     }
 
   .title {

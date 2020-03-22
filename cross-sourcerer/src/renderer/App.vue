@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style>
-  /* CSS */
+  .text-bold {
+    font-weight: 600;
+  }
 </style>

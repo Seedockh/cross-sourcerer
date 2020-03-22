@@ -18,7 +18,7 @@ const apolloClient = new ApolloClient({
   // You should use an absolute URL here
   uri: 'https://api.github.com/graphql',
   headers: {
-    authorization: `Bearer 657073476fdd7ac4241a236326582a6bdb211698`
+    authorization: `Bearer df3585411ff0c25c6ec41cd5c64a3bf5d24c36bd`
   }
 })
 

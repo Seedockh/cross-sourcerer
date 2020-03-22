@@ -1,6 +1,7 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
+import auth from 'electron-auth'
 
 /**
  * Set `__static` path to static files in production
@@ -9,6 +10,9 @@ import { app, BrowserWindow } from 'electron'
 if (process.env.NODE_ENV !== 'development') {
   global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
+
+console.log('test env : ')
+console.log(process.env.TEST)
 
 let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
@@ -20,9 +24,13 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 563,
-    useContentSize: true,
-    width: 1000
+    width: 1024,
+    height: 565,
+    minWidth: 1024,
+    minHeight: 565,
+    frame: true,
+    resizable: true,
+    center: true
   })
 
   mainWindow.loadURL(winURL)
@@ -34,8 +42,27 @@ function createWindow () {
     })
   }
 
+  // When receiving request for login on Github
+  ipcMain.on('github::auth', async (evt, arg) => {
+    authGithub(evt)
+  })
+
   mainWindow.on('closed', () => {
     mainWindow = null
+  })
+}
+
+function authGithub (evt) {
+  /**
+   * Authenticate to Github API
+   */
+  // Initialize the github auth options
+  const opt = { client_id: 'd7c85f7692849e76398e', client_secret: 'a4a9c02a95a3257f72a835164103ed5dffa90598' }
+
+  // Handle the github authentication
+  return auth(auth.providers.github, opt, (error, token) => {
+    if (error) return error
+    if (token) evt.sender.send('github::token', token)
   })
 }
 
