@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/Seedockh/cross-sourcerer/issues"
   },
-  "homepage": "https://github.com/Seedockh/cross-sourcerer#readme"
+  "homepage": "https://github.com/Seedockh/cross-sourcerer#readme",
+  "devDependencies": {}
 }
