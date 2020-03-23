@@ -19,7 +19,7 @@ This project aims to be a copycat of Sourcerer as a cross-platform Electron App.
 
 ![https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs1.png](https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs1.png)
 
-![https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs2.png](https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs2.png)
+![https://image.noelshack.com/fichiers/2020/13/2/1585004666-cs2.png](https://image.noelshack.com/fichiers/2020/13/2/1585004666-cs2.png)
 
 ---
 
