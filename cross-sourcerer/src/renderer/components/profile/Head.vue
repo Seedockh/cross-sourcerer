@@ -12,7 +12,7 @@
             <div class="card">
               <p>Commits</p>
               <ApolloQuery :query="require('../../graphql/GetCommits.gql')" :variables="{id: data.viewer.id}">
-                <template slot-scope="{ result: { loading, error, data }, commits }">
+                <template slot-scope="{ result: { loading, error, data }}">
                   <div v-if="error" class="error">{{ error }}</div>
                   <div v-else-if="data" class="result">
                     <Commits :repositories="data.viewer.repositories.edges" />
@@ -105,5 +105,6 @@ export default {
         height: 50px;
         width: 100px;
         border-radius: 3px;
+        box-shadow: 1px 1px 2px grey;
       }
 </style>

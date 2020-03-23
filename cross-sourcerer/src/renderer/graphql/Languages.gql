@@ -1,6 +1,24 @@
-query Languages {
-  viewer {
+query Languages ($id: String) {
+	viewer {
     id
-    login
+    repositories(first: 100) {
+      edges {
+        node {
+          primaryLanguage {
+            name
+            color
+          }
+          defaultBranchRef {
+            target {
+							... on Commit {
+                history(first: 0 author: {id: $id}) {
+                  totalCount
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="overview">
-    <h3>OVERVIEW</h3>
+    <h2>OVERVIEW</h2>
     <ApolloQuery class="ovw-apollo" :query="require('../../graphql/Overview.gql')">
       <template slot-scope="{ result: { loading, error, data } }">
         <div v-if="error" class="error">{{ error }}</div>
@@ -21,11 +21,15 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
   #overview {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3em;
+    margin: 3em 0;
+  }
+  h2 {
+    align-self: flex-start;
+    margin-left: 30%;
   }
 </style>

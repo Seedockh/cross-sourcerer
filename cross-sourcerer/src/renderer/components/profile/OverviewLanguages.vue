@@ -80,19 +80,11 @@ export default {
       let datasets = []
       let labels = []
 
-      /* yearLanguage: {
-        color: '#lpldl',
-        count: 5,
-        name: 'Javascript',
-        year: 2018
-      } */
-
       // Setting labels
       this.yearLanguages.map(lang => {
         if (labels.indexOf(lang.year) === -1) {
           labels.push(lang.year)
         }
-        // labels = ['2018', '2019', '2020']
       })
 
       // Creating datasets
@@ -146,7 +138,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
   .ovw-chart-lang {
     display: flex;
     flex-direction: column;
