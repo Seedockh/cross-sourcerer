@@ -2,8 +2,24 @@
 
 > Cross-platform Sourcerer Copycat
 
+![https://image.noelshack.com/fichiers/2020/13/1/1585002853-logo.png](https://image.noelshack.com/fichiers/2020/13/1/1585002853-logo.png)
+
 ### Author
-Pierre Hérissé
+`Pierre Hérissé`
+
+### Overview
+
+#### Authentication
+
+![https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs0.png](https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs0.png)
+
+#### Profile
+
+![https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs1.png](https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs1.png)
+
+![https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs2.png](https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs2.png)
+
+---
 
 This app runs with Electron.
 
@@ -60,8 +76,6 @@ electron-packager <sourcedir> <appname> --platform=<platform> --arch=<arch> [opt
 
 ```
 
-Any question ? (Find the documentation here)[https://github.com/electron/electron-packager]
+Any question ? [Find the documentation here](https://github.com/electron/electron-packager)
 
----
 
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
