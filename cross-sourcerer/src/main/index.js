@@ -18,22 +18,19 @@ const winURL = process.env.NODE_ENV === 'development'
   : `file://${__dirname}/index.html`
 
 function createWindow () {
-  /**
-   * Initial window options
-   */
+  /** * Initial window options */
   mainWindow = new BrowserWindow({
     width: 1024,
     height: 565,
-    minWidth: 1024,
-    minHeight: 565,
-    frame: true,
     resizable: true,
     center: true,
-    devTools: false
+    webPreferences: {
+      devTools: false
+    }
   })
 
   mainWindow.loadURL(winURL)
-  mainWindow.closeDevTools()
+  mainWindow.setMenu(null)
 
   if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
     mainWindow.webContents.once('dom-ready', () => {
@@ -52,13 +49,9 @@ function createWindow () {
 }
 
 function authGithub (evt) {
-  /**
-   * Authenticate to Github API
-   */
-
+  /** * Authenticate to Github API */
   // Initialize the github auth options
-  const opt = { client_id: process.env.GITHUB_CLIENT_ID, client_secret: process.env.GITHUB_CLIENT_SECRET }
-
+  const opt = { client_id: process.env.GITHUB_CLIENT_ID, client_secret: process.env.GITHUB_CLIENT_SECRET, devTools: false }
   // Handle the github authentication
   return auth(auth.providers.github, opt, (error, token) => {
     if (error) return error

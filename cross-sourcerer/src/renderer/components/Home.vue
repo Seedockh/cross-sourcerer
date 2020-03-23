@@ -1,9 +1,9 @@
 <template>
-  <main>
+  <main id="home">
     <div class="left-side">
-      <span class="title">
+      <h2>
         Welcome to Cross-Sourcerer
-      </span>
+      </h2>
       <div class="two-columns-block">
         <img src="../assets/logo.png" alt="Github logo">
         <p>This project aims to be a copycat of <a href="https://sourcerer.io/" target="_blank" rel="noreferrer noopener">Sourcerer</a> as a cross-platform Electron App. Github fetching done with GraphQL.</p>
@@ -12,7 +12,7 @@
 
     <div class="right-side">
       <div class="login">
-        <div class="title">Getting Started</div>
+        <h2>Getting Started</h2>
         <Auth></Auth>
       </div>
     </div>
@@ -42,12 +42,21 @@
 </script>
 
 <style>
-  main {
+  #home {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    color: #2c3e50;
+    padding: 0 5em;
   }
 
-  main > div { flex-basis: 50%; }
+  #home > div { flex-basis: 50%; }
+
+  a {
+    color: rgb(227, 76, 38);
+    text-decoration: none;
+  }
 
   .left-side, .right-side {
     display: flex;

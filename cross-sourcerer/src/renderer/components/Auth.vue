@@ -37,32 +37,6 @@ export default {
   flex-direction: column;
 }
 
-.checks {
-  margin: 1em 0;
-}
-
-.input:focus {
-  outline: 0;
-}
-.button:focus {
-  outline: 0;
-  border: solid 2px green;
-  border-radius: 3px;
-}
-
-label {
-  display: block;
-  margin-bottom: 6px;
-}
-
-.input {
-  font-family: inherit;
-  font-size: inherit;
-  border: solid 2px #ccc;
-  border-radius: 3px;
-  width: 100%;
-}
-
 .error {
   color: red;
 }

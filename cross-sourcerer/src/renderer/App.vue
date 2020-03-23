@@ -25,11 +25,10 @@ export default {
     background:
       radial-gradient(
         ellipse at top left,
-        rgba(255, 255, 255, 1) 40%,
+        rgba(255, 255, 255, 1) 10%,
         rgba(229, 229, 229, .9) 100%
       );
     height: 100vh;
-    padding: 60px 80px;
     width: 100%;
     min-width: 500px;
     min-height: 500px;
@@ -51,6 +50,11 @@ export default {
     border: 0;
     border-radius: 3px;
   }
+    .button:focus {
+      outline: 0;
+      border: solid 2px green;
+      border-radius: 3px;
+    }
 
   .form,
   .input,

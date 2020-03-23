@@ -1,5 +1,9 @@
 query InitGithub {
   viewer {
-    login
+    name
+    status {
+      message
+    }
+    location
   }
 }

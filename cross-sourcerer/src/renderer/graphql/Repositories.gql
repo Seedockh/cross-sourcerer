@@ -1,0 +1,5 @@
+query Repositories {
+  viewer {
+    login
+  }
+}
