@@ -9,6 +9,8 @@
 
 ### Overview
 
+This project aims to be a copycat of Sourcerer as a cross-platform Electron App. Github fetching done with GraphQL.
+
 #### Authentication
 
 ![https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs0.png](https://image.noelshack.com/fichiers/2020/13/1/1585002974-cs0.png)
