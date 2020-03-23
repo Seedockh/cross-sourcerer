@@ -13,8 +13,8 @@
     <Head></Head>
     <Overview></Overview>
     <Languages></Languages>
-    <!--<FunFacts></FunFacts>
-    <Repositories></Repositories>-->
+    <!--<FunFacts></FunFacts>-->
+    <Repositories></Repositories>
     <button type="submit" name="Logout" class="button logout" v-on:click="logout">Logout</button>
   </div>
 </template>

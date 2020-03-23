@@ -1,6 +1,36 @@
-query Repositories {
-  viewer {
+query Repositories ($id: String) {
+	viewer {
     id
-    login
+    repositories(first: 100) {
+      edges {
+        node {
+          name
+          description
+          owner {
+            avatarUrl
+            login
+          }
+          primaryLanguage {
+            name
+            color
+          }
+          defaultBranchRef {
+            target {
+							... on Commit {
+                history(first: 0 author: {id: $id}) {
+                  totalCount
+                  edges {
+                  	node {
+											additions
+                    	deletions
+                  	}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
