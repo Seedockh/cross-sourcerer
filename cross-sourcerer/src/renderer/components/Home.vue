@@ -46,7 +46,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     color: #2c3e50;
     padding: 0 5em;
   }

@@ -1,5 +1,6 @@
 query InitGithub {
   viewer {
+    id
     name
     status {
       message

@@ -1,5 +1,5 @@
 <template>
-  <p>{{ totalLines }}</p>
+  <p class="text-bold">{{ totalLines }}</p>
 </template>
 
 <script>

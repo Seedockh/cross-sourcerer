@@ -28,10 +28,8 @@ export default {
         rgba(255, 255, 255, 1) 10%,
         rgba(229, 229, 229, .9) 100%
       );
-    height: 100vh;
     width: 100%;
     min-width: 500px;
-    min-height: 500px;
   }
 
   .text-bold {

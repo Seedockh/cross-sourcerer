@@ -1,5 +1,5 @@
 <template>
-  <p>{{ totalCommits }}</p>
+  <p class="text-bold">{{ totalCommits }}</p>
 </template>
 
 <script>

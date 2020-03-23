@@ -1,5 +1,16 @@
 query Overview {
   viewer {
-    login
+    id
+    repositories(first: 100) {
+      edges {
+        node {
+          updatedAt
+          primaryLanguage {
+            name
+            color
+          }
+        }
+      }
+    }
   }
 }

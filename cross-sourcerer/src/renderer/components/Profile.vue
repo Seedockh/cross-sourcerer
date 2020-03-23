@@ -11,8 +11,8 @@
       </template>
     </ApolloQuery>
     <Head></Head>
-    <!--<Overview></Overview>
-    <Languages></Languages>
+    <Overview></Overview>
+    <!--<Languages></Languages>
     <FunFacts></FunFacts>
     <Repositories></Repositories>-->
     <button type="submit" name="Logout" class="button logout" v-on:click="logout">Logout</button>
@@ -52,6 +52,7 @@ export default {
   .apollo-head {
     width: 100%;
     height: 200px;
+    min-height: 200px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
