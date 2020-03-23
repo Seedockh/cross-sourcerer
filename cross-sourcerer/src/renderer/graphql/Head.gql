@@ -1,5 +1,6 @@
 query {
 	viewer {
+		id
     login
     avatarUrl
     repositories {

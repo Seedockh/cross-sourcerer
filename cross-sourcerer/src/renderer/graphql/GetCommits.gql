@@ -1,0 +1,27 @@
+query GetCommits ($id: String) {
+	viewer {
+    id
+    repositories(first: 100) {
+      edges {
+        node {
+          defaultBranchRef {
+            target {
+							... on Commit {
+                history(first:100, author: {id: $id}) {
+                  edges {
+                    node {
+                      ... on Commit {
+                        additions
+                        deletions
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

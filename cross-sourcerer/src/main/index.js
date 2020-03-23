@@ -25,7 +25,7 @@ function createWindow () {
     resizable: true,
     center: true,
     webPreferences: {
-      devTools: false
+      devTools: true
     }
   })
 

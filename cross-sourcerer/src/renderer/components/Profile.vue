@@ -11,10 +11,10 @@
       </template>
     </ApolloQuery>
     <Head></Head>
-    <Overview></Overview>
+    <!--<Overview></Overview>
     <Languages></Languages>
     <FunFacts></FunFacts>
-    <Repositories></Repositories>
+    <Repositories></Repositories>-->
     <button type="submit" name="Logout" class="button logout" v-on:click="logout">Logout</button>
   </div>
 </template>

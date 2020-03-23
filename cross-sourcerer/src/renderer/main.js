@@ -2,6 +2,8 @@ import Vue from 'vue'
 import axios from 'axios'
 import ApolloClient from 'apollo-boost'
 import VueApollo from 'vue-apollo'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import gql from 'graphql-tag'
 
 import App from './App'
 import router from './router'
@@ -12,7 +14,17 @@ process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1'
 /* =============================================*
  *======== APOLLO CLIENT CONFIGURATION ========*
  *============================================= */
+const typeDefs = gql`
+  type User {
+    id: ID!
+    login: String!
+    done: Boolean!
+  }
+`
+const cache = new InMemoryCache()
 const apolloClient = new ApolloClient({
+  cache,
+  typeDefs,
   uri: 'https://api.github.com/graphql',
   request: (operation) => {
     const token = localStorage.getItem('token')
@@ -21,7 +33,8 @@ const apolloClient = new ApolloClient({
         authorization: token ? `Bearer ${token}` : ''
       }
     })
-  }
+  },
+  resolvers: {}
 })
 const apolloProvider = new VueApollo({ defaultClient: apolloClient })
 

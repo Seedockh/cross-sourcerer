@@ -11,7 +11,15 @@
           <div class="cardsBar">
             <div class="card">
               <p>Commits</p>
-              <p class="text-bold">0</p>
+              <ApolloQuery :query="require('../../graphql/GetCommits.gql')" :variables="{id: data.viewer.id}">
+                <template slot-scope="{ result: { loading, error, data }, commits }">
+                  <div v-if="error" class="error">{{ error }}</div>
+                  <div v-else-if="data" class="result">
+                    <Commits :repositories="data.viewer.repositories.edges" />
+                  </div>
+                  <div v-else class="result">...</div>
+                </template>
+              </ApolloQuery>
             </div>
             <div class="card">
               <p>Repositories</p>
@@ -19,7 +27,15 @@
             </div>
             <div class="card">
               <p>Lines of code</p>
-              <p class="text-bold">0</p>
+              <ApolloQuery :query="require('../../graphql/GetCommits.gql')" :variables="{id: data.viewer.id}">
+                <template slot-scope="{ result: { loading, error, data }, commits }">
+                  <div v-if="error" class="error">{{ error }}</div>
+                  <div v-else-if="data" class="result">
+                    <LinesOfCode :repositories="data.viewer.repositories.edges" />
+                  </div>
+                  <div v-else class="result">...</div>
+                </template>
+              </ApolloQuery>
             </div>
             <div class="card">
               <p>Followers</p>
@@ -36,9 +52,12 @@
   </div>
 </template>
 <script>
+import Commits from './Commits'
+import LinesOfCode from './LinesOfCode'
 // login, avatUrl, nbCommits, nbRepos, lines of code, followers, following
 export default {
-  name: 'profileHead'
+  name: 'profileHead',
+  components: { Commits, LinesOfCode }
 }
 </script>
 <style lang="css" scoped>
