@@ -1,6 +1,7 @@
 <template>
   <div class="ovw-chart-lang">
     <OverviewChart v-if="datasets && options" :datasets="datasets" :options="options" />
+    <code class="text-bold">{{ languages.length }} repositories</code>
     <div class="ovw-languages">
       <div class="ovw-language-cards" v-for="language in groupedLanguages">
         <div class="ovw-language-card">
@@ -63,7 +64,7 @@ export default {
     setChartsLanguages () {
       this.languages.map(language => {
         let date = new Date(language.node.updatedAt)
-        let lang = { ...language.node.primaryLanguage, year: date.getFullYear(), count: 0 }
+        let lang = { ...language.node.primaryLanguage, year: `${date.getFullYear()}-${date.getMonth()}`, count: 0 }
         if (lang.name) {
           if (this.yearLanguages.filter(yLang => yLang.name === lang.name && yLang.year === lang.year).length === 0) {
             lang.count++
@@ -101,7 +102,9 @@ export default {
             datasets.push({
               label: lang.name,
               backgroundColor: lang.color,
-              order: index,
+              order: this.yearLanguages.length - index,
+              showLine: true,
+              fill: true,
               data: []
             })
           }
@@ -124,6 +127,7 @@ export default {
       this.options = {
         responsive: true,
         maintainAspectRatio: false,
+        spanGaps: true,
         legend: {
           display: false
         },
@@ -132,8 +136,7 @@ export default {
             stacked: true,
             ticks: {
               min: 0,
-              max: 30,
-              stepSize: 20
+              stepSize: 1
             }
           }]
         }
@@ -148,6 +151,9 @@ export default {
     display: flex;
     flex-direction: column;
   }
+    .ovw-chart-lang code {
+      margin: 1em 2em;
+    }
   .ovw-languages {
     width: 550px;
     min-width: 400px;

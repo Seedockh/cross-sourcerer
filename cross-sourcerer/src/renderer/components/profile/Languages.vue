@@ -18,4 +18,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+#languages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3em;
+}
 </style>
