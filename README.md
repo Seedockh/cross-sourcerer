@@ -8,9 +8,9 @@
 `Pierre Hérissé`
 
 ## Setup
-This will require a `.env` file to be runable. To fill this `.env`, you need to add an [OAuth App](https://github.com/settings/developers) to add this App. 
-
-Basic endpoint will be `http://localhost:9080`
+This will require a `.env` file to be runable. To fill this `.env`, you need to add an [OAuth App](https://github.com/settings/applications/new) to add this App :
+   - Homepage URL : `http://localhost:9080/`
+   - Authorization Callback URL : `http://localhost:9080/auth`
 
 Then you will have a `CLIENT_ID` and a `CLIENT_SECRET` specific for this app.
 
@@ -94,7 +94,7 @@ electron-packager . cross-sourcerer --platform=<platform> --arch=<arch>
 - for MacOS :
    - electron-packager . cross-sourcerer --platform=darwin --arch=x64
 - for Linux :
-   - electron-packager . cross-sourcerer --platform=linux --arch=x64  
+   - electron-packager . cross-sourcerer --platform=linux --arch=x64
 - for all platforms :
    - electron-packager . cross-sourcerer --all
 ```
